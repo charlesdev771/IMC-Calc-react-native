@@ -12,7 +12,11 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    marginTop: 30
+    marginTop: 30,
+    justifyContent: 'space-around',
+    marginTop: 100,
+    paddingTop: 20
+
   },
 
   form:
@@ -20,7 +24,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 'auto',
     marginTop: 30,
-    padding: 10
+    paddingT: 10
   },
 
   formLabel:
@@ -58,7 +62,69 @@ textButtonCalculator:
 {
   fontSize: 20,
   color: '#fff'
+},
+
+
+resultImc:
+{
+  flex: 1,
+  marginTop: 15,
+  paddingTop: 60,
+  borderRadius: 50,
+  alignItems: 'center',
+  width: '100%',
+  fontSize: 48,
+  color: '#ff004',
+  fontWeight: 'bold'
+},
+
+information:
+{
+  fontSize: 19,
+  color: '#ff004',
+  fontWeight: 'bold'
+},
+
+
+errorMessage:
+{
+  fontSize: 12,
+  color: 'red',
+  fontWeight: 'bold',
+  paddingLeft: 20
+},
+
+boxShareButton:
+{
+  width: '100%',
+  alignItems: 'center',
+  marginTop: 10,
+  height: 150,
+  backgroundColor: '#fff'
+},
+
+shared:
+{
+  backgroundColor: '#1877f2',
+  borderRadius: 50,
+  paddingBottom: 5,
+  paddingTop: 5,
+},
+
+sharedText:
+{
+  color: '#ffff',
+  fontWeight: 'bold',
+  paddingHorizontal: 30,
+},
+
+exibibitionButton:
+{
+  width: '100%',
+  height: '50%'
+
 }
+
 
 });
 

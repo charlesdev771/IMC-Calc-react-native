@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 
   textTitle:
   {
-    color: '#222',
+    color: '#fff',
     fontSize: 24,
     fontWeight: 'bold'
   }
