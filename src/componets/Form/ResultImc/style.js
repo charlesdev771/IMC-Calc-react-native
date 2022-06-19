@@ -121,9 +121,32 @@ sharedText:
 exibibitionButton:
 {
   width: '100%',
-  height: '50%'
+  height: '30%'
 
+},
+
+listImcs:
+{
+  marginTop: 50,
+  width: '100%',
+  height: '50%',
+  backgroundColor: 'black',
+  alignItems: 'center',
+},
+resultImcItem:
+{
+  fontSize: 18,
+  color: 'red',
+  height:'50%',
+  width: '100%',
+  paddingRight: 20,
+},
+
+textResultItemList:
+{
+  fontSize: 16,
 }
+
 
 
 });

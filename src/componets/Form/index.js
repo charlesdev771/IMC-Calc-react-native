@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button, TouchableOpacity, Keyboard, Vibration, Pressable} from 'react-native';
+import {View, Text, TextInput, Button, TouchableOpacity, Keyboard, Vibration, Pressable, FlatList} from 'react-native';
 import ResultImc from './ResultImc';
 import styles from './ResultImc/style';
 
@@ -13,11 +13,14 @@ export default function Form()
   const [imc, setImc] = useState(null);
   const [textButton, setTextButton] = useState('Calcular');
   const [errorMessage, setErrorMessage] = useState(null);
+  const [imcList, setImcList] = useState([])
 
   function imcCalc()
   {
     let heightFormat = height.replace(',' , '.')
-    return setImc((weight/(heightFormat*heightFormat)).toFixed(2))
+    let totalImc = (weight/(heightFormat*heightFormat)).toFixed(2);
+    setImcList ((arr) => [...arr,{id: new Date().getTime(), imc:totalImc}]);
+    setImc(totalImc);
   }
 
   function validate()
@@ -48,7 +51,7 @@ export default function Form()
   return (
       <View sytle={styles.formContext}>
 
-      
+
       <Pressable onPress={Keyboard.dimiss} sytle={styles.form}>
 
         <Text style={styles.formLabel}>Altura</Text>
@@ -74,6 +77,20 @@ export default function Form()
         <Text style={styles.textButtonCalculator}>Calcular</Text></TouchableOpacity>
       </Pressable>
       <ResultImc messageResultImc={messageImc} resultImc={imc}/>
+
+      <FlatList
+        style={styles.listImc}
+        data={imcList.reverse()}
+        renderItem={({item}) => {
+          return(
+            <Text style={styles.resultImcItem}>
+              <Text style={styles.textResultItemList}>Resultado Imc = {item.imc}</Text>
+            </Text>
+          )
+      }}
+      keyExtractor={(item) => {item.id}}
+      >
+      </FlatList>
     </View>
   );
 }
